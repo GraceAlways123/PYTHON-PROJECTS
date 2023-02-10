@@ -1,0 +1,36 @@
+#A python code to print out my daily to do lists
+#This program is for beginners
+
+#define a todo function
+
+def myToDoList():
+
+    todos = []
+
+    while True:
+
+        user_input = input("what do you want, add, show, or exit")
+        user_input = user_input.strip()
+
+        match user_input:
+
+            case add:
+                todo = input("Enter what you want to do today!")
+                todos.append(todo)
+
+            case show:
+                for item in todos:
+                    print(item)
+
+            case exit:
+                print("These are the list of things you want to do today\n")
+                if todos == []:
+                    return("oops!, you did not type any word!\n\nThank you for your time.")
+                for item in todos:
+                    print(item)
+                return "\nThank you for your time"
+
+            case error_message:
+                print("oops!, you entered an unknown word, kindly enter add, show, or exit")
+
+print(myToDoList())
